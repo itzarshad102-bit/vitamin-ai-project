@@ -2,7 +2,7 @@ import os
 import requests
 import zipfile
 
-MODEL_URL = "PASTE_YOUR_ZIP_LINK_HERE"
+MODEL_URL = https://github.com/user-attachments/files/25615618/skin_model.zip
 ZIP_PATH = "skin_model.zip"
 MODEL_PATH = "skin_model.h5"
 
@@ -218,5 +218,6 @@ if uploaded_file is not None:
 st.write("---")
 
 st.caption("AI Health Analyzer | CSP Project | Built using Python & Streamlit")
+
 
 
