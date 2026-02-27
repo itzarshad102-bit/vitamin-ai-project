@@ -1,3 +1,25 @@
+import os
+import requests
+import zipfile
+
+MODEL_URL = "PASTE_YOUR_ZIP_LINK_HERE"
+ZIP_PATH = "skin_model.zip"
+MODEL_PATH = "skin_model.h5"
+
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model...")
+    
+    response = requests.get(MODEL_URL)
+    
+    with open(ZIP_PATH, "wb") as f:
+        f.write(response.content)
+
+    print("Extracting model...")
+    
+    with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
+        zip_ref.extractall()
+
+    print("Model ready.")
 import streamlit as st
 import joblib
 import numpy as np
@@ -194,4 +216,5 @@ if uploaded_file is not None:
 
 # ---------------- FOOTER ----------------
 st.write("---")
+
 st.caption("AI Health Analyzer | CSP Project | Built using Python & Streamlit")
