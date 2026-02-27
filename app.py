@@ -218,3 +218,4 @@ if uploaded_file is not None:
 st.write("---")
 
 st.caption("AI Health Analyzer | CSP Project | Built using Python & Streamlit")
+
